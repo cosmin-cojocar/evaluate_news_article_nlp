@@ -17,6 +17,28 @@ module.exports = {
         test: "/\.js$/",
         exclude: /node_modules/,
         loader: ["babel-loader", "eslint-loader"]
+      }, {
+        // Apply rule for .sass, .scss or .css files
+        test: /\.(sa|sc|c)ss$/,
+        exclude: /node_modules/,
+        // Set loaders to transform files.
+        // Loaders are applying from right to left(!)
+        // The first loader will be applied after others
+        use: [
+          {
+            // Creates "style" nodes from JS strings
+            loader: "style-loader"
+          }, {
+            // This loader resolves url() and @imports inside CSS
+            loader: "css-loader",
+          }, {
+            // First we transform SASS to standard CSS
+            loader: "sass-loader",
+            options: {
+              implementation: require("sass")
+            }
+          }
+        ],
       }
     ]
   },
