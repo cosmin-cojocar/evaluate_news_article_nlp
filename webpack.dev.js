@@ -8,18 +8,22 @@ module.exports = {
   mode: "development",
   devtool: "source-map",
   stats: "verbose",
+  devServer: {
+    port: 3000
+  },
   module: {
     rules: [
       {
         test: "/\.js$/",
         exclude: /node_modules/,
-        loader: "babel-loader"
+        loader: ["babel-loader", "eslint-loader"]
       }
     ]
   },
   plugins: [
     new HtmlWebPackPlugin({
       template: "./src/client/views/index.html",
+      favicon: "./src/client/favicon.ico",
       filename: "./index.html"
     }),
     new CleanWebpackPlugin({
