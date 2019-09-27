@@ -219,4 +219,7 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
+# Custom
+dist
+
 # End of https://www.gitignore.io/api/osx,node,intellij,firebase
