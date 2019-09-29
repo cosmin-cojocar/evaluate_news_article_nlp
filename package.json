@@ -7,8 +7,8 @@
     "build-dev": "webpack-dev-server --config webpack.dev.js --open",
     "build-prod": "webpack --config webpack.prod.js",
     "start-server": "node src/server/index.js",
-    "start": "npm run start-server & npm run build-dev",
-    "start-prod": "npm run start-server & npm run build-prod"
+    "start": "npm run start-server && npm run build-dev",
+    "start-prod": "npm run start-server && npm run build-prod && workbox injectManifest workbox-config.js"
   },
   "keywords": [],
   "author": "Cosmin Cojocar",
@@ -39,6 +39,7 @@
     "sass": "^1.22.12",
     "sass-loader": "^8.0.0",
     "style-loader": "^1.0.0",
-    "webpack-dev-server": "^3.7.2"
+    "webpack-dev-server": "^3.7.2",
+    "workbox-webpack-plugin": "^4.3.1"
   }
 }

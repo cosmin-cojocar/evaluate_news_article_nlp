@@ -1,6 +1,7 @@
 const path = require("path");
 const webpack = require("webpack");
 const HtmlWebPackPlugin = require("html-webpack-plugin");
+const WorkboxPlugin = require("workbox-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 module.exports = {
@@ -48,6 +49,7 @@ module.exports = {
       favicon: "./src/client/favicon.ico",
       filename: "./index.html"
     }),
+    new WorkboxPlugin.GenerateSW(),
     new CleanWebpackPlugin({
       // Simulate the removal of files
       dry: true,
