@@ -1,4 +1,7 @@
 import { checkForName } from "./nameChecker";
+import URL_REGEX from "./validator";
+
+const validateUrl = (url) => URL_REGEX.test(url);
 
 function handleSubmit(event) {
   event.preventDefault();
@@ -12,7 +15,10 @@ function handleSubmit(event) {
     .then(res => res.json())
     .then(function (res) {
       document.getElementById("results").innerHTML = res.message;
-    })
+    });
 }
 
-export {handleSubmit}
+export {
+  handleSubmit,
+  validateUrl
+}
