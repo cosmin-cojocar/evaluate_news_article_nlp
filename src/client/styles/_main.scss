@@ -1,0 +1,73 @@
+@import "_colors";
+
+main {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  grid-area: main;
+  justify-content: center;
+  padding: 1rem;
+
+  section {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+
+    svg {
+      circle {
+        fill: $background-red;
+      }
+      text {
+        fill: $color-white;
+        font-family: "Emblema One", cursive;
+      }
+    }
+
+    form {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      margin-top: 1rem;
+      padding: 0.5rem;
+
+      button {
+        background-color: $color-teal;
+        border-radius: 9999px;
+        color: $color-white;
+        cursor: pointer;
+        display: block;
+        font-size: 1rem;
+        font-weight: 200;
+        letter-spacing: 0.025rem;
+        line-height: 1.15em;
+        margin-top: 1rem;
+        outline: none;
+        padding: 0.5rem;
+        width: 110px;
+
+        &:hover {
+          transform: translateY(-1px);
+        }
+      }
+
+      input {
+        border: 1px solid $color-teal;
+        border-radius: 24px;
+        box-shadow: none;
+        color: $color-teal;
+        font: italic 16px "IBM Plex Sans", sans-serif;
+        font-weight: 200;
+        height: 44px;
+        min-width: 570px;
+        padding: 0 1rem;
+        text-align: center;
+
+        &::placeholder {
+          color: $color-teal;
+          font: italic 16px "IBM Plex Sans", sans-serif;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+}
