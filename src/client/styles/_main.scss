@@ -14,6 +14,10 @@ main {
 
     &.column {
       flex-direction: column;
+
+      label {
+        display: none;
+      }
     }
 
     &.row {
@@ -41,10 +45,6 @@ main {
           margin: 0 0 0 0.5rem;
         }
       }
-    }
-
-    label {
-      display: none;
     }
 
     svg {
@@ -138,6 +138,10 @@ main {
     &.visible {
       opacity: 1;
       visibility: visible;
+
+      #resultCategories {
+        width: 100%;
+      }
     }
 
     &.hidden {
@@ -147,10 +151,6 @@ main {
 
     #resultCategories {
       width: 100%;
-
-      label {
-        display: block;
-      }
 
       table {
         border: 1px solid $color-teal;
