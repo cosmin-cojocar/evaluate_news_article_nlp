@@ -4,12 +4,13 @@ const HtmlWebPackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 module.exports = {
-  entry: "./src/client/index.js",
+  entry: path.join(__dirname, "src", "client", "index.js"),
   mode: "development",
   devtool: "source-map",
-  stats: "verbose",
-  devServer: {
-    port: 3000
+  stats: "none",
+  output: {
+    path: path.join(__dirname, "dist"),
+    filename: "bundle.js"
   },
   module: {
     rules: [

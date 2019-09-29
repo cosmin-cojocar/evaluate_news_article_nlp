@@ -11,7 +11,41 @@ main {
   section {
     align-items: center;
     display: flex;
-    flex-direction: column;
+
+    &.column {
+      flex-direction: column;
+    }
+
+    &.row {
+      flex-direction: column;
+
+      label {
+        color: $color-teal;
+        display: block;
+        font: italic 1rem "IBM Plex Sans", sans-serif;
+        font-weight: 400;
+        margin-left: 5px;
+        margin-right: 5px;
+      }
+
+      svg {
+        display: none;
+      }
+
+      form {
+        flex-direction: column;
+        margin: 0;
+        padding: 0;
+
+        button {
+          margin: 0 0 0 0.5rem;
+        }
+      }
+    }
+
+    label {
+      display: none;
+    }
 
     svg {
       circle {
@@ -83,7 +117,7 @@ main {
         font: italic 16px "IBM Plex Sans", sans-serif;
         font-weight: 200;
         height: 44px;
-        min-width: 570px;
+        min-width: 250px;
         padding: 0 1rem;
         text-align: center;
 
@@ -91,6 +125,68 @@ main {
           color: $color-teal;
           font: italic 16px "IBM Plex Sans", sans-serif;
           font-weight: 500;
+        }
+      }
+    }
+  }
+
+  #resultSection {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+
+    &.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    &.hidden {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    #resultCategories {
+      width: 100%;
+
+      label {
+        display: block;
+      }
+
+      table {
+        border: 1px solid $color-teal;
+        border-radius: 24px;
+        margin-top: 2rem;
+        width: 100%;
+
+        tr {
+          border-bottom: 1px solid $color-teal;
+        }
+
+        td {
+          border-right: 1px solid $color-teal;
+          padding: 0.5rem;
+        }
+      }
+    }
+  }
+}
+
+
+@media (min-width: 768px) {
+  main {
+    section {
+
+      &.row {
+        flex-direction: row;
+
+        form {
+          flex-direction: row;
+        }
+      }
+
+      form {
+        input {
+          min-width: 570px;
         }
       }
     }

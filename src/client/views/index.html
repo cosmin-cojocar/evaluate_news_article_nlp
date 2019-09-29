@@ -19,7 +19,8 @@
       </nav>
     </header>
     <main role="main">
-      <section>
+      <section class="column" id="mainSection">
+        <label>Article URL</label>
         <svg xmlns="http://www.w3.org/2000/svg" width="93" height="93" viewBox="0 0 190 190">
           <circle cx="95" cy="95" r="95"></circle>
           <text font-size="157" letter-spacing="12.077">
@@ -32,6 +33,11 @@
           <label class="hidden" id="input__error"></label>
           <button id="submit__button" type="submit">Evaluate</button>
         </form>
+      </section>
+      <section class="hidden" id="resultSection">
+        <label>Text:</label>
+        <div id="resultText"></div>
+        <div id="resultCategories"></div>
       </section>
     </main>
     <footer role="contentinfo">

@@ -4,14 +4,11 @@ const HtmlWebPackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 module.exports = {
-  entry: "./src/client/index.js",
+  entry: path.join(__dirname, "src", "client", "index.js"),
   mode: "production",
-  stats: "verbose",
-  devServer: {
-    contentBase: "./dist"
-  },
+  stats: "none",
   output: {
-    path: __dirname + "/dist",
+    path: path.join(__dirname, "dist"),
     filename: "bundle.js"
   },
   module: {
