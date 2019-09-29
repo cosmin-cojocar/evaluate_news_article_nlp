@@ -7,7 +7,7 @@
     <title>Evaluate News Articles with NLP</title>
   </head>
   <body>
-    <header role="banner">
+    <header class="hidden" role="banner">
       <nav role="navigation">
         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 190 190">
           <circle cx="95" cy="95" r="95"></circle>
@@ -27,9 +27,10 @@
           </text>
         </svg>
         <form class="" onsubmit="return handleSubmit(event)">
-          <label class="app-hidden" for="name">Article link for NLP evaluation</label>
-          <input id="name" name="input" placeholder="Article URL for evaluation" type="text">
-          <button type="submit">Evaluate</button>
+          <label class="hidden" for="article__url">Article link for NLP evaluation</label>
+          <input id="article__url" name="input" placeholder="Article URL for evaluation" type="text">
+          <label class="hidden" id="input__error"></label>
+          <button id="submit__button" type="submit">Evaluate</button>
         </form>
       </section>
     </main>
