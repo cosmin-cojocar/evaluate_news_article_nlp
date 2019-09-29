@@ -7,39 +7,37 @@
     <title>Evaluate News Articles with NLP</title>
   </head>
   <body>
-    <header>
-      <div class="">
-        Logo
-      </div>
-      <div class="">
-        navigation
-      </div>
+    <header role="banner">
+      <nav role="navigation">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 190 190">
+          <circle cx="95" cy="95" r="95"></circle>
+          <text font-size="157" letter-spacing="12.077">
+            <tspan x="37" y="147">N</tspan>
+          </text>
+        </svg>
+        <h1>News Article Evaluator</h1>
+      </nav>
     </header>
-    <main>
+    <main role="main">
       <section>
+        <svg xmlns="http://www.w3.org/2000/svg" width="93" height="93" viewBox="0 0 190 190">
+          <circle cx="95" cy="95" r="95"></circle>
+          <text font-size="157" letter-spacing="12.077">
+            <tspan x="37" y="147">N</tspan>
+          </text>
+        </svg>
         <form class="" onsubmit="return handleSubmit(event)">
-          <input
-            id="name"
-            name="input"
-            value=""
-            onblur="onBlur()"
-            placeholder="Name"
-            type="text">
-          <input
-            name=""
-            onclick="return handleSubmit(event)"
-            onsubmit="return handleSubmit(event)"
-            value="submit"
-            type="submit">
+          <label class="app-hidden" for="name">Article link for NLP evaluation</label>
+          <input id="name" name="input" placeholder="Article URL for evaluation" type="text">
+          <button type="submit">Evaluate</button>
         </form>
       </section>
-      <section>
-        <strong>Form Results:</strong>
-        <div id="results"></div>
-      </section>
     </main>
-    <footer>
-      <p>This is a footer</p>
+    <footer role="contentinfo">
+      <div class="app-footer-copyright">
+        <span>© 2019</span>
+        <a href="https://cosmin.dev" title="Cosmin Cojocar" target="_blank">Cosmin Cojocar</a>
+      </div>
     </footer>
   </body>
 </html>
