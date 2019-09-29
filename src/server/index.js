@@ -1,6 +1,15 @@
+require("dotenv").config();
+
+const AYLIEN = require("aylien_textapi");
 const path = require("path");
 const express = require("express");
 const mockAPIResponse = require("./mockAPI.js");
+
+// set AYLIEN API credentials
+const nlpEngine = new AYLIEN({
+  application_id: process.env.API_ID,
+  application_key: process.env.API_KEY
+});
 
 const app = express();
 
