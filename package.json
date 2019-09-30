@@ -39,6 +39,6 @@
     "dev": "webpack-dev-server --config webpack.dev.js --colors --open",
     "prod": "webpack --config webpack.prod.js --colors",
     "server": "node src/server/index.js",
-    "start": "npm run server && npm run dev"
+    "start": "npm run server & npm run dev"
   }
 }
