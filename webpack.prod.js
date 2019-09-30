@@ -1,7 +1,7 @@
 const path = require("path");
 const webpack = require("webpack");
 const HtmlWebPackPlugin = require("html-webpack-plugin");
-const WorkboxPlugin = require("workbox-webpack-plugin");
+const WorkboxWebpackPlugin = require("workbox-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 module.exports = {
@@ -9,8 +9,9 @@ module.exports = {
   mode: "production",
   stats: "none",
   output: {
-    path: path.join(__dirname, "dist"),
-    filename: "bundle.js"
+    filename: "[name].[chunkhash].js",
+    chunkFilename: "[name].[chunkhash].bundle.js",
+    path: path.join(__dirname, "dist")
   },
   module: {
     rules: [
@@ -44,12 +45,6 @@ module.exports = {
     ]
   },
   plugins: [
-    new HtmlWebPackPlugin({
-      template: "./src/client/views/index.html",
-      favicon: "./src/client/favicon.ico",
-      filename: "./index.html"
-    }),
-    new WorkboxPlugin.GenerateSW(),
     new CleanWebpackPlugin({
       // Simulate the removal of files
       dry: true,
@@ -58,6 +53,21 @@ module.exports = {
       // Automatically remove all unused webpack assets on rebuild
       cleanStaleWebpackAssets: true,
       protectWebpackAssets: false
+    }),
+    new webpack.HashedModuleIdsPlugin(),
+    new HtmlWebPackPlugin({
+      title: "Evaluate News Articles with NLP",
+      template: "./src/client/views/index.html",
+      minify: {
+        collapseWhitespace: true,
+        removeComments: true
+      },
+      favicon: "./src/client/favicon.ico",
+      filename: "./index.html"
+    }),
+    new WorkboxWebpackPlugin.InjectManifest({
+      swDest: "sw.js",
+      swSrc: "./src/client/sw.js"
     })
   ]
 };
